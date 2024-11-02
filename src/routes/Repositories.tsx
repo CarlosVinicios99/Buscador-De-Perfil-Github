@@ -5,6 +5,7 @@ import classes from './Repositories.module.css'
 import BackButton from '../components/BackButton'
 
 import { RepositoryProps } from '../types/repository'
+import Loader from '../components/Loader'
 
 const Repositories = () => {
 
@@ -25,17 +26,29 @@ const Repositories = () => {
 
             setIsLoading(false)
 
-            console.log(data)
+            setRepositories(data)
         }
 
         loadRepositories(username as string)
         
     }, [])
 
+    if(!repositories && isLoading){
+        return <Loader/>
+    }
+
     return (
         <div>
-            {username}
             <BackButton/>
+            <h2>Explore os repositórios do usuário</h2>
+            {repositories && repositories.length === 0 && <p>Não há repositórios.</p>}
+            {repositories && repositories.length > 0 && (
+                <div>
+                    {repositories.map((repository: RepositoryProps) => (
+                        <p>{repository.name}</p>
+                    ))}
+                </div>
+            )}
         </div>
     )
 
