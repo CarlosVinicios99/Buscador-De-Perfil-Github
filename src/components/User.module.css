@@ -48,9 +48,11 @@
 }
 
 .stats .number {
-    background-color: #58bdb1b4;
+    background-color: #4ed8c88a;
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
+    font-weight: 7s00;
+    font-size: 1.15rem;
 }
 
 .user a {
