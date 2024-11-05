@@ -39,12 +39,12 @@ const Repositories = () => {
     }
 
     return (
-        <div>
+        <div className={classes.repositories}>
             <BackButton/>
             <h2>Explore os repositórios do usuário</h2>
             {repositories && repositories.length === 0 && <p>Não há repositórios.</p>}
             {repositories && repositories.length > 0 && (
-                <div>
+                <div className={classes.repositories_container}>
                     {repositories.map((repository: RepositoryProps) => (
                        <Repository key={repository.name} {...repository}/>
                     ))}
