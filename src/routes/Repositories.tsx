@@ -6,6 +6,7 @@ import BackButton from '../components/BackButton'
 
 import { RepositoryProps } from '../types/repository'
 import Loader from '../components/Loader'
+import Repository from '../components/Repository'
 
 const Repositories = () => {
 
@@ -45,7 +46,7 @@ const Repositories = () => {
             {repositories && repositories.length > 0 && (
                 <div>
                     {repositories.map((repository: RepositoryProps) => (
-                        <p>{repository.name}</p>
+                       <Repository key={repository.name} {...repository}/>
                     ))}
                 </div>
             )}
