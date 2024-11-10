@@ -11,6 +11,13 @@
     align-items: start;
 }
 
+.language {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
 .stats {
     display: flex;
     gap: 1rem;
@@ -27,7 +34,7 @@
 }
 
 .stats svg {
-    background-color: #4ed8c7;
+    background-color: #4ed8c88a;
     padding: 0.2rem 0.4rem;
     font-size: 2rem;
 }

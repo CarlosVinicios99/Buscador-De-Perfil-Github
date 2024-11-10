@@ -27,7 +27,11 @@ const Repositories = () => {
 
             setIsLoading(false)
 
-            setRepositories(data)
+            let orderedRepos = data.sort((a: RepositoryProps, b: RepositoryProps) => b.stargazers_count - a.stargazers_count)
+
+            orderedRepos = orderedRepos.slice(0, 5)
+
+            setRepositories(orderedRepos)
         }
 
         loadRepositories(username as string)
